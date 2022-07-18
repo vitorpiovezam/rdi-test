@@ -3,8 +3,9 @@
 Tiny webapp for a restaurant menu. 
 With a view categorized for the client and a backoffice view for the restaraunt update with new dishes.
 
-Angular 14 webapp
-Serverless project running offline with NodeJS
+**Tech Stack**
+ - Angular 14 webapp
+ - Serverless project running offline with NodeJS and DynamoDB
 
 ## Requirements
 
