@@ -1,0 +1,23 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.dynamodb
+
+# Angular directories
+.angular
+
+# Webpack directories
+.webpack
+
+src/env.yml
+
+# Visual Studio Code directories
+vscode/launch.json
+.vscode
+
+# AWS
+.AWS
+aws

@@ -1,0 +1,17 @@
+{
+  "name": "api2",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "sls offline"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless": "^3.21.0",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.40",
+    "serverless-offline": "^8.8.1"
+  }
+}

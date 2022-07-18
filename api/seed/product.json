@@ -1,0 +1,106 @@
+[
+  {
+    "uid": "1",
+    "name": "Fried Chicken (6 units)",
+    "type" : 0,
+    "imgUrl" : "https://taste.co.za/wp-content/uploads/2015/03/traditional-fried-chicken-3039-400x400.jpg",
+    "price": 13
+  },
+  {
+    "uid": "34567898765",
+    "name": "Fried Chicken (12 units)",
+    "type" : 0,
+    "imgUrl": "https://taste.co.za/wp-content/uploads/2015/03/traditional-fried-chicken-3039-400x400.jpg",
+    "price": 18
+  },
+  {
+    "uid": "2",
+    "name": "Hamburguer Bacon",
+    "type" : 1,
+    "imgUrl": "https://www.hamburgueriadoportuga.com.br/wp-content/uploads/2020/01/x-banco.png",
+    "price": 25
+  },
+  {
+    "uid": "21231",
+    "name": "Hamburguer",
+    "type" : 1,
+    "imgUrl": "https://hamburgueriaemsetelagoas.com/wp-content/uploads/2021/09/classic-chicken-alberts-hamburgueria-em-sete-lagoas-hamburguer-artesanal.jpg",
+    "price": 20
+  },
+  {
+    "uid": "3",
+    "name": "IPA Beer",
+    "type" : 3,
+    "imgUrl": "https://cdn.awsli.com.br/800x800/459/459458/produto/83475473/e1063b7896.jpg",
+    "price": 13
+  },
+  {
+    "uid": "4",
+    "name": "Wine (glass)",
+    "type" : 3,
+    "imgUrl": "https://cdn.awsli.com.br/400x400/1241/1241561/produto/131094813/7027e520ea.jpg",
+    "price": 13
+  },
+  {
+    "uid": "5",
+    "name": "Juice",
+    "type" : 4,
+    "imgUrl": "https://www.xrite.com/-/media/xrite/images/webinars/measure-juice-color/best-practices-for-juice-color-measurement-webinar-400x400-sm.jpg?h=400&la=pt-PT&w=400&hash=B4DE6DEDA3404594A5936224F21FBF5B4C8CE336",
+    "price": 10
+  },
+  {
+    "uid": "212311",
+    "name": "French Fries",
+    "type" : 0,
+    "imgUrl": "https://i.pinimg.com/originals/07/db/49/07db49ae3dcd541ed2deaae2f3c7bee2.jpg",
+    "price": 20
+  },
+  {
+    "uid": "588",
+    "name": "Bread Homemade (3 units)",
+    "type" : 0,
+    "imgUrl": "https://i.pinimg.com/474x/80/cc/a7/80cca73882fcc037bf4d860ad432793b--no-knead-bread-yeast-bread.jpg",
+    "price": 8
+  },
+  {
+    "uid": "67867",
+    "name": "Bread Homemade (6 units)",
+    "type" : 0,
+    "imgUrl": "https://i.pinimg.com/474x/80/cc/a7/80cca73882fcc037bf4d860ad432793b--no-knead-bread-yeast-bread.jpg",
+    "price": 14
+  },
+  {
+    "uid": "67812367",
+    "name": "Extra Hamburguer",
+    "type" : 5,
+    "price": 14
+  },
+  {
+    "uid": "127812367",
+    "name": "Extra Bacon",
+    "type" : 5,
+    "imgUrl": "",
+    "price": 14
+  },
+  {
+    "uid": "2324",
+    "name": "Extra Mayo",
+    "type" : 5,
+    "imgUrl": "",
+    "price": 14
+  },
+  {
+    "uid": "233224",
+    "name": "No Sugar",
+    "type" : 5,
+    "imgUrl": "",
+    "price": 14
+  },
+  {
+    "uid": "2123274",
+    "name": "No Ice",
+    "type" : 5,
+    "imgUrl": "",
+    "price": 14
+  }
+]
