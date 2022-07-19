@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { NewProductDialogComponent } from 'src/app/pages/admin/menu/new/new-dialog.component';
 import { Products } from 'src/app/shared/definitions/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
 
@@ -15,6 +17,11 @@ import { ProductService } from 'src/app/shared/services/product.service';
           (click)="toggleSelect(product)">
         </app-product-card>
       </ng-container>
+
+      <div class="add-card" *ngIf="admin" (click)="new()">
+        <mat-icon>add</mat-icon>
+        <strong>Click to add new product</strong>
+      </div>
     </div>
   `,
   styles: [`
@@ -25,6 +32,20 @@ import { ProductService } from 'src/app/shared/services/product.service';
 
       app-product-card:not(:last-child)
         margin-right: 15px
+      
+    .add-card 
+      display: flex
+      min-width: 200px
+      flex-flow: column
+      justify-content: center
+      align-items: center
+
+      :hover
+        cursor: pointer
+
+      mat-icon 
+        transform: scale(1.8)
+        margin-bottom: 15px
   `]
 })
 export class ListComponent implements OnInit {
@@ -38,12 +59,12 @@ export class ListComponent implements OnInit {
   admin = false;
 
   @Output()
-  onProductSelection: EventEmitter<Products[]>;
+  onProductSelection: EventEmitter<Products>;
 
   selectedProducts: Products[] = [];
 
-  constructor() {
-    this.onProductSelection = new EventEmitter<Products[]>;
+  constructor(private dialog: MatDialog) {
+    this.onProductSelection = new EventEmitter<Products>;
   }
 
   ngOnInit(): void {
@@ -56,7 +77,14 @@ export class ListComponent implements OnInit {
       this.selectedProducts.splice(this.selectedProducts.indexOf(product), 1) :
       this.selectedProducts.push(product)
 
-    this.onProductSelection.emit(this.selectedProducts);
+    this.onProductSelection.emit(product);
+  }
+
+  new() {
+    this.dialog.open(NewProductDialogComponent, {
+      width: '600px',
+      data: { type: this.products[0].type }
+    })
   }
 
   isSelected(product: Products): boolean {

@@ -26,11 +26,11 @@ export abstract class BaseService<T extends BaseModel> {
   }
 
   create(t: T): Observable<T> {
-    return this.http.post<T>(`${this.apiUrl}`, { t });
+    return this.http.post<T>(`${this.apiUrl}/${this.controller}`, { body: t });
   }
 
   edit(t: T): Observable<T> {
-    return this.http.put<T>(`${this.apiUrl}`, { t });
+    return this.http.put<T>(`${this.apiUrl}/${this.controller}`, { body: t });
   }
 
   delete(t: T): Observable<T> {

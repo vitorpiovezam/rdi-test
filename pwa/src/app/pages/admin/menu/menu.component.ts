@@ -1,11 +1,16 @@
 import { Component, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Subject } from 'rxjs';
 import { Products, ProductsTypes } from 'src/app/shared/definitions/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
+import { EditProductDialogComponent } from './edit/edit-dialog.component';
 
 @Component({
   selector: 'app-root',
   template: `
+    <header>
+      <h1>Manage Menu</h1>
+    </header>
     <main>
       <ng-container *ngFor="let products of list">
         <h2> {{ productsTypes[products[0].type] }}s </h2>
@@ -15,13 +20,8 @@ import { ProductService } from 'src/app/shared/services/product.service';
     </main>
   `,
   styles: [`
-    .checkout 
-      position: fixed
-      bottom: 30px
-      right: 50px
-
-    .submit:hover
-      cursor: pointer
+    header 
+      margin-bottom: 2em
   `]
 })
 export class AdminMenuComponent {
@@ -43,6 +43,7 @@ export class AdminMenuComponent {
 
   constructor(
     private productService: ProductService,
+    private dialog: MatDialog
   ) { }
 
   async ngOnInit() {
@@ -56,8 +57,11 @@ export class AdminMenuComponent {
     });
   }
 
-  edit(product: Products[]) {
-    
+  edit(products: Products) {
+    this.dialog.open(EditProductDialogComponent, {
+      width: '600px',
+      data: { product: products }
+    })
   }
 
   buildMenu() {

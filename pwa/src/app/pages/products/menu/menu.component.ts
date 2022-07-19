@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
 import { Products, ProductsTypes } from 'src/app/shared/definitions/product.model';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -40,6 +41,7 @@ export class MenuComponent {
     ProductsTypes.Meal,
     ProductsTypes.Drink,
     ProductsTypes.DrinkNotAlcoholic,
+    ProductsTypes.Dessert
   ];
 
   list = [] as Products[][];
@@ -48,6 +50,7 @@ export class MenuComponent {
 
   constructor(
     private productService: ProductService,
+    private snackbar: MatSnackBar
   ) { }
 
   async ngOnInit() {
@@ -69,12 +72,19 @@ export class MenuComponent {
     });
   }
 
-  updateCart(selectedProducts: Products[]) {
-    this.selectedProducts = selectedProducts;
+  isSelected(product: Products): boolean {
+    return this.selectedProducts.includes(product);
+  }
+
+  updateCart(selectedProduct: Products) {
+    const isSelected = this.isSelected(selectedProduct);
+    isSelected ?
+      this.selectedProducts.splice(this.selectedProducts.indexOf(selectedProduct), 1) :
+      this.selectedProducts.push(selectedProduct)
   }
 
   submit() {
-    confirm('Your order is being prepared');
+    this.snackbar.open('Your order is being prepared', undefined, { duration: 5000 })
     this.selectedProducts = [...[]];
     this.resetCart();
   }

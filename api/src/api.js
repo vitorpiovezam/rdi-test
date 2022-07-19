@@ -64,29 +64,65 @@ app.get("/product/:uid", async function (req, res) {
 });
 
 app.post("/product", async function (req, res) {
-  const { uid, name } = req.body;
+  const { uid, name, type, imgUrl, price } = req.body.body;
   if (typeof uid !== "string") {
     res.status(400).json({ error: '"uid" must be a string' });
   } else if (typeof name !== "string") {
     res.status(400).json({ error: '"name" must be a string' });
   }
 
+  const Item = {
+    uid: uid,
+    name: name,
+    type: type,
+    imgUrl: imgUrl,
+    price: price
+  };
+
   const params = {
     TableName: PRODUCT_TABLE,
-    Item: {
-      uid: uid,
-      name: name,
-    },
+    Item
   };
 
   try {
     await dynamoDbClient.put(params).promise();
-    res.json({ uid, name });
+    res.json(Item);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Could not create item" });
   }
 });
+
+app.put("/product", async function (req, res) {
+  const { uid, name, type, imgUrl, price } = req.body.body.product;
+  if (typeof uid !== "string") {
+    res.status(400).json({ error: '"uid" must be a string' });
+  } else if (typeof name !== "string") {
+    res.status(400).json({ error: '"name" must be a string' });
+  }
+  
+  const Item = {
+    uid: uid,
+    name: name,
+    type: type,
+    imgUrl: imgUrl,
+    price: price
+  };
+
+  const params = {
+    TableName: PRODUCT_TABLE,
+    Item
+  };
+
+  try {
+    await dynamoDbClient.put(params).promise();
+    res.json(Item);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Could not create item" });
+  }
+});
+
 
 // Products Status
 
