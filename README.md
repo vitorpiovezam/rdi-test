@@ -40,4 +40,6 @@ I'm currently enrolled in some projects, 6 days was not enought time to I finish
 So the test is without testing (I would write with cypress)
 And without crud in the product child logics.
 
+**If you guys can provide me more two days, I finish**
+
 ```npm run test```
