@@ -34,8 +34,10 @@ In case of webpack fail (If Node >=18)
 
 Then hit ```npm run start``` 🔥
 
-## Testing
+## Testing And other features
 
-This project have unit testing in both sides (front end and backend) and end to end testing.
+I'm currently enrolled in some projects, 6 days was not enought time to I finish the test.
+So the test is without testing (I would write with cypress)
+And without crud in the product child logics.
 
 ```npm run test```
